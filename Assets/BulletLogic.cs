@@ -30,12 +30,13 @@ public class BulletLogic : MonoBehaviour
     void Awake()
     {
         distance = Random.Range(minDistance, maxDistance);
-        flightTime = distance / speed;
-
-        objectPooler = ObjectPooler.GetInstance();
-       
+        flightTime = distance / speed;       
     }
 
+	private void Start()
+	{
+        objectPooler = ObjectPooler.GetInstance();
+    }
 	private void OnEnable()
 	{
         landed = false;

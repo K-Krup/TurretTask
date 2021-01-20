@@ -48,17 +48,15 @@ public class TurretLogic : MonoBehaviour
     private void Awake()
     {
         currentChargesCount = chargesCount;
-
-        objectPooler = ObjectPooler.GetInstance();
-
         meshRenderer = GetComponent<MeshRenderer>();
-
         //turretCouter = 0;
         visibleTurrets = new HashSet<TurretLogic>();
     }
 
 	void Start()
     {
+        objectPooler = ObjectPooler.GetInstance();
+
         if (isInitial)
         {
             Recolor(RED);
